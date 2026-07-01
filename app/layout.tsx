@@ -1,12 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import { proximaNova } from "./fonts";
-import "./globals.scss";
-
+import { proximaNova } from './fonts';
+import './globals.scss';
 
 export const metadata: Metadata = {
-  title: "Inchapin",
-  description: "Дом бизнес-класса для ценителей роскоши",
+  title: 'Inchapin',
+  description: 'Дом бизнес-класса для ценителей роскоши',
 };
 
 export default function RootLayout({
@@ -15,10 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="ru"
-      className={proximaNova.className}
-    >
+    <html lang="ru" className={proximaNova.className}>
       <body>{children}</body>
     </html>
   );

@@ -1,49 +1,68 @@
 $font-proxima: var(--font-proxima, sans-serif);
 
 .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: $font-proxima;
-    border: none;
-    border-radius: 100px;
-    cursor: pointer;
-    text-transform: uppercase;
+  font-family: $font-proxima;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
+  overflow: hidden;
 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    &:hover {
-        opacity: 0.9;
-    }
+  &:hover {
+    opacity: 0.9;
+  }
 
-    &:disabled {
-        cursor: not-allowed;
-        opacity: 0.5;
-    }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 
-    &.primary {
-        background: #2F80ED;
-        color: #fff;
-    }
+  &.primary {
+    background: #2f80ed;
+    color: #fff;
+  }
 
-    &.small {
-        padding: 15px 20px;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 7%;
-    }
+  &.small {
+    padding: 15px 20px;
+    font-size: 13px;
+    font-weight: 600;
+  }
 
-    &.large {
-        padding: 24px 69px;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 7%;
-    }
+  &.large {
+    padding: 24px 69px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
 
-    &__icon {
-        margin-right: 8px;
-    }
+.inner {
+  display: grid;
 
-    &__text {
-        white-space: nowrap;
-    }
+  overflow: hidden;
+}
+
+.text {
+  grid-area: 1 / 1;
+
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.text:first-child {
+  transform: translateY(0%);
+}
+
+.text:last-child {
+  transform: translateY(100%);
+}
+
+.button:hover .text:first-child {
+  transform: translateY(-100%);
+}
+
+.button:hover .text:last-child {
+  transform: translateY(0%);
 }
