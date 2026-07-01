@@ -1,6 +1,8 @@
 import type { Preview } from '@storybook/nextjs-vite'
 import '../app/globals.scss';
 
+import { proximaNova } from "../app/fonts";
+
 const preview: Preview = {
   parameters: {
     controls: {
@@ -10,6 +12,15 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <div className={proximaNova.variable}>
+        <Story />
+      </div>
+
+    ),
+
+  ],
 };
 
 export default preview;
