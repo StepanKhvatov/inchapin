@@ -42,25 +42,29 @@
   width: 100%;
   margin: 0 auto;
   max-width: 1440px;
-  padding: 0 80px;
+  padding: 0 10px;
 
   @include small-desktop {
     max-width: 1280px;
-    padding: 0 40px;
   }
 
   @include tablet {
     max-width: 1023px;
-    padding: 0 24px;
   }
 
   @include mobile {
     max-width: 100%;
-    padding: 0 16px;
   }
 
   @include large-desktop {
     max-width: 1600px;
-    padding: 0 80px;
   }
+}
+
+@mixin typography-button {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  line-height: 1;
+  text-transform: uppercase;
 }

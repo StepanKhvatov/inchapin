@@ -12,22 +12,14 @@
   }
 }
 
-@mixin base-typography {
-  font-size: 13px;
-  font-weight: 600;
-  font-family: $font-proxima;
-  letter-spacing: 0.07em;
-  line-height: 1;
-}
-
 .button {
   cursor: pointer;
-  text-transform: uppercase;
+
   overflow: hidden;
   white-space: nowrap;
 
   @include focus-ring;
-  @include base-typography;
+  @include typography-button;
 
   &:disabled {
     cursor: not-allowed;

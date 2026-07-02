@@ -9,7 +9,7 @@ export type ButtonProps = PropsWithChildren<{
   className?: string;
   //  TO DO: поменять на html attr
   onClick?: () => void;
-  label: string;
+  label?: string;
 }>;
 
 export const Button = ({

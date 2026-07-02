@@ -1,22 +1,58 @@
 @use '../../../styles/mixins.scss' as *;
 @use '../../../styles/variables.module.scss' as *;
 
+@mixin link {
+  &:hover {
+    opacity: 0.7;
+  }
+  transition: $transition-fast;
+  text-decoration: none;
+  color: #111111;
+  @include focus-ring;
+}
+
 .header {
   display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 1;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+
+  gap: 40px;
   justify-items: center;
   align-items: center;
   @include container;
 }
 
+.menu {
+  display: flex;
+  padding: 2px 0px;
+  gap: 12px;
+  color: #111111;
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+}
+
+.select {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
 .logo {
   grid-column-start: 5;
-  grid-column-end: 7;
+  grid-column-end: 8;
+
+  @include link;
+}
+
+.phone {
+  @include typography-button;
+  @include link;
+  grid-column-start: 8;
+  grid-column-end: 10;
+  //   grid-column: span 2 / span 2;
 }
 
 .order {
   grid-column-start: 10;
-  grid-column-end: 11;
-  // grid-area: 11/12
+  grid-column-end: 12;
+  //   grid-column: span 2 / span 2;
 }
