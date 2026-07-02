@@ -1,6 +1,6 @@
 import Form from 'next/form';
 import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input/Input';
+import { Input, PhoneInput } from '@/components/ui/Input';
 import styles from './Request.module.scss';
 import Link from 'next/link';
 
@@ -10,7 +10,7 @@ export const Request = () => {
 
     const phone = formData.get('phone');
 
-    const email = formData.get('name');
+    const email = formData.get('email');
 
     console.log('name', name);
     console.log('phone', phone);
@@ -26,8 +26,11 @@ export const Request = () => {
           name="name"
           required
           autoComplete="name"
+          minLength={2}
+          maxLength={50}
+          pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
         />
-        <Input
+        <PhoneInput
           id="phone"
           label="Телефон"
           name="phone"
@@ -40,6 +43,7 @@ export const Request = () => {
           name="email"
           required
           autoComplete="email"
+          type="email"
         />
       </div>
       <p className={styles.disclaimer}>
