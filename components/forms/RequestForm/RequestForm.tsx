@@ -1,10 +1,10 @@
 import Form from 'next/form';
 import { Button } from '@/components/ui/Button';
 import { Input, PhoneInput } from '@/components/ui/Input';
-import styles from './Request.module.scss';
+import styles from './RequestForm.module.scss';
 import Link from 'next/link';
 
-export const Request = () => {
+export const RequestForm = () => {
   const formAction = (formData: FormData) => {
     const name = formData.get('name');
 

@@ -1,8 +1,11 @@
-import { ReactNode, useRef, PropsWithChildren } from 'react';
+'use client';
+
+import { useRef, PropsWithChildren } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import clsx from 'clsx';
 
 import styles from './Modal.module.scss';
+import { CloseIcon } from '../icons/CloseIcon';
+import { Button } from '../Button';
 
 export type ModalProps = PropsWithChildren<{
   isOpen: boolean;
@@ -25,17 +28,24 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
       unmountOnExit
       nodeRef={nodeRef}
     >
-      <div ref={nodeRef} className={styles.overlay} onClick={onClose}>
-        <div className={styles.panel} onClick={(e) => e.stopPropagation()}>
-          <button
+      <div ref={nodeRef} className={styles.overlay}>
+        <div className={styles.container}>
+          <Button
             className={styles.close}
             onClick={onClose}
             aria-label="Закрыть"
+            variant="text"
           >
-            ×
-          </button>
-
-          {children}
+            <CloseIcon />
+          </Button>
+          <div
+            className={styles.panel}
+            onClick={(event) => {
+              event.stopPropagation();
+            }}
+          >
+            {children}
+          </div>
         </div>
       </div>
     </CSSTransition>

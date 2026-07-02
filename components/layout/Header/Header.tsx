@@ -4,8 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button/Button';
 import { Burger } from '@/components/ui/Burger/Burger';
-
-const PHONE = '+74955272121';
+import { OpenRequest } from './OpenRequestForm';
+import { MASKED_REQUEST_PHONE, REQUEST_PHONE } from '@/constants';
 
 export const Header = () => {
   return (
@@ -24,11 +24,11 @@ export const Header = () => {
         <Image src={LogoImage} alt={'Логотип Inchapin'} />
       </Link>
 
-      <Link href={`tel:${PHONE}`} className={styles.phone}>
-        {PHONE}
+      <Link href={`tel:${REQUEST_PHONE}`} className={styles.phone}>
+        {MASKED_REQUEST_PHONE}
       </Link>
 
-      <Button variant="text" label="Заказать звонок" className={styles.order} />
+      <OpenRequest className={styles.order} />
     </header>
   );
 };

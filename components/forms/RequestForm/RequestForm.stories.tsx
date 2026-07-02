@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { Request } from './Request';
+import { Request } from './RequestForm';
 
 const meta = {
   title: 'Request',

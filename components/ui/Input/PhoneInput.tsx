@@ -1,8 +1,7 @@
 import { useIMask } from 'react-imask';
 
 import { Input, type InputProps } from './Input';
-
-const PHONE_MASK = '+7 (000) 000-00-00';
+import { PHONE_MASK } from '@/constants';
 
 export const PhoneInput = (props: InputProps) => {
   const { ref } = useIMask<HTMLInputElement>({
@@ -11,5 +10,3 @@ export const PhoneInput = (props: InputProps) => {
 
   return <Input ref={ref} {...props} />;
 };
-
-PhoneInput.displayName = 'PhoneInput';
