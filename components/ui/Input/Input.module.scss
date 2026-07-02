@@ -1,14 +1,41 @@
+@use '../../../styles/mixins.scss' as *;
+@use '../../../styles/variables.module.scss' as *;
+
+@mixin typography-input {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
 .field {
   position: relative;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 4px 0px;
+
+  &:focus-within .label,
+  .input:valid + .label {
+    transform: translateY(-25px) scale(0.65);
+    color: #111;
+  }
 }
 
 .input {
   width: 100%;
-
   background: #fff;
   outline: none;
   border: none;
+
+  @include typography-input;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  pointer-events: none;
+  transform-origin: left center;
+  transform: translateY(-50%) scale(1);
+  transition: $transition-base;
+  @include typography-input;
 }

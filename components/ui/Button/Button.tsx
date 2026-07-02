@@ -1,16 +1,18 @@
 import { PropsWithChildren } from 'react';
 import clsx from 'clsx';
-
+import { ButtonHTMLAttributes } from 'react';
 import styles from './Button.module.scss';
 
-export type ButtonProps = PropsWithChildren<{
-  variant: 'primary' | 'outline' | 'text';
-  size?: 'small' | 'large';
-  className?: string;
-  //  TO DO: поменять на html attr
-  onClick?: () => void;
-  label?: string;
-}>;
+export type ButtonProps = Pick<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  'type' | 'onClick'
+> &
+  PropsWithChildren<{
+    variant: 'primary' | 'outline' | 'text';
+    size?: 'small' | 'large';
+    className?: string;
+    label?: string;
+  }>;
 
 export const Button = ({
   variant,
@@ -18,6 +20,8 @@ export const Button = ({
   className,
   children,
   label,
+  type,
+  onClick,
 }: ButtonProps) => {
   return (
     <button
@@ -27,6 +31,8 @@ export const Button = ({
         size && styles[size],
         className,
       )}
+      type={type}
+      onClick={onClick}
     >
       {label && (
         <span className={styles.inner}>

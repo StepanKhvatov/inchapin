@@ -1,0 +1,31 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.disclaimer {
+  margin-bottom: 30px;
+  font-size: 12px;
+  line-height: 140%;
+  max-width: 454px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  & a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.inputsContainer {
+  width: 100%;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 41px;
+}
+
+.button {
+  width: fit-content;
+}

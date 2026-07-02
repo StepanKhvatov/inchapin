@@ -9,10 +9,9 @@ export const Input = ({ label, id, ...props }: InputProps) => {
   return (
     <div className={styles.field}>
       <input id={id} className={styles.input} {...props} />
-
-      {/* <label htmlFor={id} className={styles.label}>
+      <label htmlFor={id} className={styles.label}>
         {label}
-      </label> */}
+      </label>
     </div>
   );
 };
