@@ -14,11 +14,18 @@
 .header {
   display: grid;
   grid-template-columns: repeat(11, minmax(0, 1fr));
-
-  gap: 40px;
   justify-items: center;
   align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #fff;
+
   @include container;
+  padding-top: 28px;
+  padding-bottom: 28px;
 }
 
 .menu {
@@ -26,14 +33,14 @@
   padding: 2px 0px;
   gap: 12px;
   color: #111111;
-  grid-column-start: 1;
-  grid-column-end: 3;
-
+  grid-column-start: 0;
+  grid-column-end: 1;
+  justify-self: self-start;
 }
 
 .select {
-  grid-column-start: 3;
-  grid-column-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
 .logo {
@@ -48,11 +55,13 @@
   @include link;
   grid-column-start: 8;
   grid-column-end: 10;
+    justify-self: self-end;
   //   grid-column: span 2 / span 2;
 }
 
 .order {
   grid-column-start: 10;
-  grid-column-end: 12;
+  grid-column-end: -1;
+  justify-self: self-end;
   //   grid-column: span 2 / span 2;
 }
