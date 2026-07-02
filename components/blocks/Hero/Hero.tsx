@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './Hero.module.scss';
+import heroImage from '@/public/images/hero.png';
 
 type Image = {
   src: string;
@@ -17,11 +18,12 @@ export const Hero = ({ title, description, image }: HeroProps) => {
       {Boolean(image.src && image.alt) && (
         <div className={styles.imageContainer}>
           <Image
-            src={image.src}
+            src={heroImage}
             fill
-            sizes="100vw"
             alt={image.alt}
             className={styles.image}
+            loading="eager"
+            quality={90}
           />
         </div>
       )}

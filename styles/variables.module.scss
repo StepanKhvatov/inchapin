@@ -12,8 +12,3 @@ $ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 $transition-fast: all $duration-fast $ease-standard;
 $transition-base: all $duration-base $ease-standard;
 $transition-smooth: all $duration-base $ease-out;
-
-:export {
-  colorPrimary: $color-primary;
-  fontProxima: $font-proxima;
-}

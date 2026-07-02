@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-
+import { Header } from '@/components/layout/Header';
 import '../styles/globals.scss';
 import { proximaNova } from './fonts';
 
@@ -15,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={proximaNova.variable}>
-      <body >{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
