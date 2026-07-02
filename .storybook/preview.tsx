@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/nextjs-vite';
-import '../app/globals.scss';
+import '../styles/globals.scss';
 
 import { proximaNova } from '../app/fonts';
 

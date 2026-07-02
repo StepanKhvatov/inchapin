@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
+import '../styles/globals.scss';
 import { proximaNova } from './fonts';
-import './globals.scss';
 
 export const metadata: Metadata = {
   title: 'Inchapin',
@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={proximaNova.className}>
-      <body>{children}</body>
+    <html lang="ru" className={proximaNova.variable}>
+      <body >{children}</body>
     </html>
   );
 }

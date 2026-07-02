@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import styles from './Button.module.scss';
 
 export type ButtonProps = PropsWithChildren<{
-  variant: 'primary' | 'outline';
+  variant: 'primary' | 'outline' | 'text';
   size: 'small' | 'large';
   className?: string;
   //  TO DO: поменять на html attr
@@ -23,12 +23,15 @@ export const Button = ({
     <button
       className={clsx(styles.button, styles[variant], styles[size], className)}
     >
-      <span className={styles.inner}>
-        <span className={styles.text}>{label}</span>
-        <span className={styles.text} aria-hidden="true">
-          {label}
+      {label && (
+        <span className={styles.inner}>
+          <span className={styles.text}>{label}</span>
+          <span className={styles.text} aria-hidden="true">
+            {label}
+          </span>
         </span>
-      </span>
+      )}
+      {children}
     </button>
   );
 };

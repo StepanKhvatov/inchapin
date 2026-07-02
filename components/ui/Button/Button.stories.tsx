@@ -13,7 +13,6 @@ const meta = {
   },
 
   args: {
-    children: 'Button',
     variant: 'primary',
     size: 'small',
     onClick: fn(),
@@ -23,7 +22,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['primary'],
+      options: ['primary', 'outline', 'text'],
     },
     size: {
       control: 'select',

@@ -1,18 +1,31 @@
+@use '../../../styles/mixins.scss' as *;
+@use '../../../styles/variables.module.scss' as *;
+
 .hero {
   display: grid;
-  grid-template-columns: 3;
-  grid-template-rows: 2;
-  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto 1fr;
+
+  @include container;
 }
 
 .title {
   grid-column-start: 2;
   grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .description {
   grid-column-start: 1;
   grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  font-size: 26px;
+  font-weight: 400;
+  max-width: 349px;
+  color: $color-primary;
+  text-transform: uppercase;
 }
 
 .image {
