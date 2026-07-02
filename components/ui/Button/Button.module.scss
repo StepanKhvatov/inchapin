@@ -16,16 +16,15 @@
   font-size: 13px;
   font-weight: 600;
   font-family: $font-proxima;
-  letter-spacing: 7%;
+  letter-spacing: 0.07em;
+  line-height: 1;
 }
 
 .button {
   cursor: pointer;
   text-transform: uppercase;
   overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  white-space: nowrap;
 
   @include focus-ring;
   @include base-typography;
@@ -63,26 +62,32 @@
 
 .inner {
   display: grid;
+
+  place-items: center;
+
   overflow: hidden;
+  grid-template-areas: 'stack';
 }
 
-.text {
+.innerText {
   grid-area: 1 / 1;
+
+  line-height: 1;
   transition: transform $duration-base $ease-standard;
 }
 
-.text:first-child {
+.innerText:first-child {
   transform: translateY(0%);
 }
 
-.text:last-child {
+.innerText:last-child {
   transform: translateY(100%);
 }
 
-.button:hover .text:first-child {
+.button:hover .innerText:first-child {
   transform: translateY(-100%);
 }
 
-.button:hover .text:last-child {
+.button:hover .innerText:last-child {
   transform: translateY(0%);
 }

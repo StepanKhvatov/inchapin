@@ -5,7 +5,7 @@ import styles from './Button.module.scss';
 
 export type ButtonProps = PropsWithChildren<{
   variant: 'primary' | 'outline' | 'text';
-  size: 'small' | 'large';
+  size?: 'small' | 'large';
   className?: string;
   //  TO DO: поменять на html attr
   onClick?: () => void;
@@ -21,12 +21,17 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={clsx(styles.button, styles[variant], styles[size], className)}
+      className={clsx(
+        styles.button,
+        styles[variant],
+        size && styles[size],
+        className,
+      )}
     >
       {label && (
         <span className={styles.inner}>
-          <span className={styles.text}>{label}</span>
-          <span className={styles.text} aria-hidden="true">
+          <span className={styles.innerText}>{label}</span>
+          <span className={styles.innerText} aria-hidden="true">
             {label}
           </span>
         </span>

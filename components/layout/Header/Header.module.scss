@@ -1,0 +1,22 @@
+@use '../../../styles/mixins.scss' as *;
+@use '../../../styles/variables.module.scss' as *;
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 1;
+  justify-items: center;
+  align-items: center;
+  @include container;
+}
+
+.logo {
+  grid-column-start: 5;
+  grid-column-end: 7;
+}
+
+.order {
+  grid-column-start: 10;
+  grid-column-end: 11;
+  // grid-area: 11/12
+}
