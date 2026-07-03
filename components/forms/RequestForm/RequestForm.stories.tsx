@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { Request } from './RequestForm';
+import { RequestForm } from './RequestForm';
 
 const meta = {
-  title: 'Request',
-  component: Request,
+  title: 'RequestForm',
+  component: RequestForm,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
-} satisfies Meta<typeof Request>;
+} satisfies Meta<typeof RequestForm>;
 
 export default meta;
 
