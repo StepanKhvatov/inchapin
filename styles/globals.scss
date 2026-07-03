@@ -1,3 +1,5 @@
+@use '@/styles/mixins.scss' as *;
+
 @import 'modern-normalize/modern-normalize.css';
 @import '../public/fonts/ProximaNova/fonts.css';
 
@@ -34,4 +36,20 @@ main {
   display: flex;
   flex-direction: column;
   gap: 110px;
+
+  @include mobile {
+    gap: 55px;
+  }
+
+  @include tablet {
+    gap: 90px;
+  }
+
+  @include small-desktop {
+    gap: 120px;
+  }
+
+  @include large-desktop {
+    gap: 160px;
+  }
 }

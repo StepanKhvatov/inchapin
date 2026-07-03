@@ -1,22 +1,15 @@
 @use '../../../styles/mixins.scss' as *;
 @use '../../../styles/variables.module.scss' as *;
 
-@mixin tablet-and-down {
-  @media (max-width: 1023px) {
-    @content;
-  }
-}
-
 .hero {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: auto 1fr;
   // TO DO высчитать
   height: calc(100dvh - 100px);
-  padding-bottom: 40px;
   @include container;
 
-  @include tablet-and-down() {
+  @include tablet-and-down {
     display: flex;
     flex-direction: column;
     align-content: start;
@@ -47,6 +40,7 @@
     line-height: 1.5;
     align-self: start;
     padding-bottom: 20px;
+    max-width: 175px;
   }
 
   @include tablet {
@@ -110,6 +104,7 @@
   padding-bottom: 40px;
 
   @include tablet-and-down() {
+    padding-bottom: 0px;
     align-self: start;
   }
 }

@@ -6,8 +6,20 @@
   }
 }
 
+@mixin tablet-and-down {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin small-desktop-and-down {
+  @media (max-width: 1280px) {
     @content;
   }
 }
@@ -46,8 +58,8 @@
   width: 100%;
   margin: 0 auto;
   max-width: 1440px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   @include small-desktop {
     max-width: 1280px;
   }
@@ -102,3 +114,18 @@
   }
   @include focus-ring;
 }
+
+// @include mobile {
+// }
+
+// @include tablet {
+// }
+
+// @include small-desktop {
+// }
+
+// @include desktop {
+// }
+
+// @include large-desktop {
+// }

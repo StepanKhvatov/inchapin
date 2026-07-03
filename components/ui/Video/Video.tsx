@@ -44,8 +44,8 @@ export const Video = ({ previewImage, video }: VideoProps) => {
 
   return (
     <>
-      <Button
-        variant="text"
+      <div
+        tabIndex={0}
         className={styles.video}
         onClick={() => {
           setOpen(true);
@@ -65,7 +65,7 @@ export const Video = ({ previewImage, video }: VideoProps) => {
             </div>
           </div>
         </div>
-      </Button>
+      </div>
       <Modal
         isOpen={open}
         onClose={() => {
