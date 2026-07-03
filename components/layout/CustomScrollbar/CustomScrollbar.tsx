@@ -13,7 +13,8 @@ export const CustomScrollbar = ({ children }: PropsWithChildren) => {
     }
 
     const scrollbar = Scrollbar.init(ref.current, {
-      damping: 0.6,
+      renderByPixels: true,
+      damping: 0.06,
     });
 
     return () => {
