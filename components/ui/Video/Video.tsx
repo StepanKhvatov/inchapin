@@ -5,7 +5,6 @@ import Image, { ImageProps } from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 import styles from './Video.module.scss';
 import { PlayIcon } from '../icons/PlayIcon';
-import { Button } from '../Button';
 
 export type VideoProps = {
   previewImage: Pick<ImageProps, 'src' | 'alt'>;

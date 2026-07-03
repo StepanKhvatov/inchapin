@@ -9,6 +9,8 @@ type OpenRequestButton = {
   className?: string;
 };
 
+const LABEL = 'Заказать звонок';
+
 export const OpenRequestButton = ({
   onClick,
   className,
@@ -17,6 +19,7 @@ export const OpenRequestButton = ({
 
   return showOutlineButton ? (
     <Button
+      aria-label={LABEL}
       type="button"
       variant="outline"
       className={className}
@@ -28,7 +31,7 @@ export const OpenRequestButton = ({
     <Button
       type="button"
       variant="text"
-      label="Заказать звонок"
+      label={LABEL}
       className={className}
       onClick={onClick}
     />

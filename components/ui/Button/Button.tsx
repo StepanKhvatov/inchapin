@@ -5,7 +5,7 @@ import styles from './Button.module.scss';
 
 export type ButtonProps = Pick<
   ButtonHTMLAttributes<HTMLButtonElement>,
-  'type' | 'onClick'
+  'type' | 'onClick' | 'aria-label'
 > &
   PropsWithChildren<{
     variant: 'primary' | 'outline' | 'text' | 'unstyled';
@@ -22,6 +22,7 @@ export const Button = ({
   label,
   type,
   onClick,
+  ...props
 }: ButtonProps) => {
   return (
     <button
@@ -33,6 +34,7 @@ export const Button = ({
       )}
       type={type}
       onClick={onClick}
+      aria-label={props['aria-label']}
     >
       {label && (
         <span className={styles.inner}>

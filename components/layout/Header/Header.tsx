@@ -1,4 +1,4 @@
-// 'use client';
+
 import styles from './Header.module.scss';
 import clsx from 'clsx';
 import LogoImage from '@/public/icons/logo.svg';
@@ -43,6 +43,7 @@ export const Header = () => {
     <header className={styles.header}>
       <Button
         variant="unstyled"
+        aria-label="Меню"
         className={clsx(styles.menu, burgerStyles.burgerContainer)}
       >
         <Burger />
