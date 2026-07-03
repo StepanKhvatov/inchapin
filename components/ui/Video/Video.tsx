@@ -1,9 +1,11 @@
 'use client';
+
 import { Modal } from '../Modal';
 import Image, { ImageProps } from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from './Video.module.scss';
 import { PlayIcon } from '../icons/PlayIcon';
+import { Button } from '../Button';
 
 export type VideoProps = {
   previewImage: Pick<ImageProps, 'src' | 'alt'>;
@@ -12,23 +14,38 @@ export type VideoProps = {
 
 export const Video = ({ previewImage, video }: VideoProps) => {
   const [open, setOpen] = useState(false);
-  useEffect(() => {
-    console.log('open', open);
-  }, [open]);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-//   function toggleFullScreen(video) {
-//     if (!document.fullscreenElement) {
-//       // If the document is not in full screen mode
-//       // make the video full screen
-//       video.requestFullscreen();
-//     } else {
-//       // Otherwise exit the full screen
-//       document.exitFullscreen?.();
-//     }
-//   }
+  const handleCanPlay = async () => {
+    if (!videoRef.current) {
+      return;
+    }
+
+    try {
+      await videoRef.current.requestFullscreen();
+
+      await videoRef.current.play();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    const handler = () => {
+      if (!document.fullscreenElement) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('fullscreenchange', handler);
+
+    return () => document.removeEventListener('fullscreenchange', handler);
+  }, []);
+
   return (
     <>
-      <button
+      <Button
+        variant="text"
         className={styles.video}
         onClick={() => {
           setOpen(true);
@@ -48,15 +65,21 @@ export const Video = ({ previewImage, video }: VideoProps) => {
             </div>
           </div>
         </div>
-      </button>
+      </Button>
       <Modal
         isOpen={open}
         onClose={() => {
-          console.log('onClose');
           setOpen(false);
         }}
       >
-        <video controls autoPlay style={{ width: '100%', height: 'auto' }}>
+        <video
+          ref={videoRef}
+          controls
+          autoPlay
+          preload="none"
+          style={{ width: '100%', height: 'auto' }}
+          onCanPlay={handleCanPlay}
+        >
           <source src={video} type="video/mp4" />
         </video>
       </Modal>
