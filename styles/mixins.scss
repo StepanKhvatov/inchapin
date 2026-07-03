@@ -1,3 +1,5 @@
+@use '@/styles/variables.module.scss' as *;
+
 @mixin mobile {
   @media (max-width: 767px) {
     @content;
@@ -41,10 +43,6 @@
   $radius: inherit
 ) {
   outline: none;
-  transition:
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-
   &:focus-visible {
     box-shadow: 0 0 0 $width $color;
     border-radius: $radius;
@@ -100,4 +98,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin link {
+  opacity: 1;
+  transition: $transition-fast;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.7;
+  }
+  @include focus-ring;
 }

@@ -50,6 +50,11 @@
     border: none;
     color: $color-primary;
   }
+
+  &.unstyled {
+    background: transparent;
+    border: none;
+  }
 }
 
 .inner {

@@ -1,23 +1,25 @@
-@use '../../../styles/variables.module.scss' as *;
+@use '@/styles/variables.module.scss' as *;
+
+.burgerContainer {
+  &:hover .burger span:first-child {
+    transform: translateY(-2px);
+  }
+
+  &:hover .burger span:last-child {
+    transform: translateY(2px);
+  }
+}
 
 .burger {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
 
-  span {
-    display: block;
-    width: 32px;
-    height: 2px;
-    background-color: $color-primary;
-    transition: $transition-base;
-  }
-
-  &:hover span:first-child {
-    transform: translateY(-2px);
-  }
-
-  &:hover span:last-child {
-    transform: translateY(2px);
-  }
+.burger span {
+  display: block;
+  width: 32px;
+  height: 2px;
+  background-color: $color-primary;
+  transition: $transition-base;
 }

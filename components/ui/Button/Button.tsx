@@ -8,7 +8,7 @@ export type ButtonProps = Pick<
   'type' | 'onClick'
 > &
   PropsWithChildren<{
-    variant: 'primary' | 'outline' | 'text';
+    variant: 'primary' | 'outline' | 'text' | 'unstyled';
     size?: 'small' | 'large';
     className?: string;
     label?: string;
