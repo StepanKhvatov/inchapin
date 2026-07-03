@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/nextjs-vite';
 import '../styles/globals.scss';
 
-import { proximaNova } from '../app/fonts';
+import { proximaNova } from '@/constants/fonts';
 
 const preview: Preview = {
   parameters: {

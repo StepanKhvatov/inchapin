@@ -22,6 +22,19 @@
   }
 }
 
+// @include mobile {
+//   //767px
+// }
+// @include tablet {
+//   // 1023px
+// }
+// @include small-desktop {
+//   // 1280px
+// }
+// @include large-desktop {
+//   // 1770px
+// }
+
 @mixin focus-ring(
   $color: rgba(34, 197, 94, 0.35),
   $width: 3px,

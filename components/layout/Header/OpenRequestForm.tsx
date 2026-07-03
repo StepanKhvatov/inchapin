@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/Button/Button';
 import { useState } from 'react';
 import { Modal } from '@/components/ui/Modal';
 import { RequestForm } from '@/components/forms/RequestForm';
-
+import modalStyles from '@/components/ui/Modal/Modal.module.scss';
 export type OpenRequestProps = {
   className?: string;
 };
@@ -28,7 +28,7 @@ export const OpenRequest = ({ className }: OpenRequestProps) => {
           setOpen(false);
         }}
       >
-        <h2>Заказать звонок</h2>
+        <h2 className={modalStyles.heading}>Заказать звонок</h2>
         <RequestForm />
       </Modal>
     </>

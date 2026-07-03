@@ -55,13 +55,11 @@
   @include link;
   grid-column-start: 8;
   grid-column-end: 10;
-    justify-self: self-end;
-  //   grid-column: span 2 / span 2;
+  justify-self: self-end;
 }
 
 .order {
   grid-column-start: 10;
   grid-column-end: -1;
   justify-self: self-end;
-  //   grid-column: span 2 / span 2;
 }

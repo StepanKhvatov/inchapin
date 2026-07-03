@@ -4,12 +4,10 @@
 .overlay {
   position: fixed;
   inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 24px;
   background: #fff;
   z-index: 9999;
+  @include flex-center;
 
   &.enter {
     opacity: 0;
@@ -40,10 +38,8 @@
 }
 
 .container {
-  display: flex;
   position: relative;
   width: 90vw;
-
   height: 90vh;
   @include flex-center;
   @include container;
@@ -53,9 +49,36 @@
   position: absolute;
   top: 0px;
   right: 0px;
-  & svg {
-    width: 24px;
-    height: 24px;
-    color: black;
+}
+
+.close svg {
+  width: 24px;
+  height: 24px;
+  color: black;
+}
+
+.heading {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+
+  @include mobile {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  @include tablet {
+    font-size: 28px;
+  }
+
+  @include small-desktop {
+    font-size: 28px;
+  }
+
+  @include large-desktop {
+    font-size: 52px;
   }
 }
