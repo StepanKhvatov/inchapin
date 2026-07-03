@@ -68,3 +68,23 @@
   line-height: 1;
   text-transform: uppercase;
 }
+
+@mixin typography-h2 {
+  font-size: 26px;
+  line-height: 1.4;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+@mixin typography-p {
+  font-size: 14px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

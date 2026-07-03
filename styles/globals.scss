@@ -27,5 +27,8 @@ body {
 }
 
 main {
-  padding-top: 100px;
+  padding: 100px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 110px;
 }

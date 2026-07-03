@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, PropsWithChildren } from 'react';
+import { useRef, PropsWithChildren, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import styles from './Modal.module.scss';
@@ -14,6 +14,20 @@ export type ModalProps = PropsWithChildren<{
 
 export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
   const nodeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [onClose]);
 
   return (
     <CSSTransition

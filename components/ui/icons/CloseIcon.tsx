@@ -1,8 +1,8 @@
-export type CloseIconProps = {
+export type IconProps = {
   className?: string;
 };
 
-export const CloseIcon = ({ className }: CloseIconProps) => {
+export const CloseIcon = ({ className }: IconProps) => {
   return (
     <svg
       viewBox="0 0 27 27"

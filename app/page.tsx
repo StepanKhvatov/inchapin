@@ -1,16 +1,11 @@
-import { Hero } from '@/components/blocks/Hero/Hero';
+import { AboutBlock } from '@/components/blocks/AboutBlock';
+import { HeroBlock } from '@/components/blocks/HeroBlock';
 
 export default function Home() {
   return (
     <main>
-      <Hero
-        title="INCHAPIN"
-        description="Дом бизнес-класса для ценителей роскоши"
-        image={{
-          src: '/images/hero.png',
-          alt: 'Красивый дом в снежном лесу',
-        }}
-      />
+      <HeroBlock />
+      <AboutBlock />
     </main>
   );
 }
