@@ -7,13 +7,13 @@
 }
 
 @mixin tablet {
-  @media (max-width: 1023px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     @content;
   }
 }
 
 @mixin small-desktop {
-  @media (max-width: 1280px) {
+  @media (min-width: 1024px) and (max-width: 1280px) {
     @content;
   }
 }
@@ -23,19 +23,6 @@
     @content;
   }
 }
-
-// @include mobile {
-//   //767px
-// }
-// @include tablet {
-//   // 1023px
-// }
-// @include small-desktop {
-//   // 1280px
-// }
-// @include large-desktop {
-//   // 1770px
-// }
 
 @mixin focus-ring(
   $color: rgba(34, 197, 94, 0.35),
@@ -53,8 +40,8 @@
   width: 100%;
   margin: 0 auto;
   max-width: 1440px;
-  padding: 0 10px;
-
+  padding-left: 10px;
+  padding-right: 10px;
   @include small-desktop {
     max-width: 1280px;
   }

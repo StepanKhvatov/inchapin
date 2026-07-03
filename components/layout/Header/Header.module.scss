@@ -1,58 +1,115 @@
-@use '../../../styles/mixins.scss' as *;
-@use '../../../styles/variables.module.scss' as *;
+@use '@/styles/mixins.scss' as *;
+@use '@/styles/variables.module.scss' as *;
 
 .header {
-  display: grid;
-  grid-template-columns: repeat(11, minmax(0, 1fr));
-  justify-items: center;
-  align-items: center;
+  @include container;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 100;
-  background-color: #fff;
-
-  @include container;
-
+  gap: 40px;
+  background-color: $color-white;
   padding-top: 28px;
   padding-bottom: 28px;
+  display: flex;
+  align-items: center;
+
+  @include mobile {
+    gap: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @include tablet {
+    gap: 62px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  @include small-desktop {
+    gap: 35px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  @include large-desktop {
+    gap: 45px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 .menu {
+  order: 1;
   display: flex;
   padding: 2px 0px;
   gap: 12px;
-  color: #111111;
-  grid-column-start: 0;
-  grid-column-end: 1;
-  overflow: visible;
+  color: $color-black;
+}
+
+.menuText {
+  @include mobile {
+    display: none;
+  }
 }
 
 .select {
-  grid-column-start: 2;
-  grid-column-end: 3;
+  order: 2;
+  @include mobile {
+    display: none;
+  }
+
+  @include tablet {
+    gap: 62px;
+    order: 5;
+  }
 }
 
 .logo {
-  grid-column-start: 5;
-  grid-column-end: 8;
-
+  order: 3;
+  margin: 0 auto;
   @include link;
+  @include mobile {
+    order: 2;
+  }
 }
 
 .phone {
+  order: 4;
+  color: $color-black;
   @include typography-button;
   @include link;
-  grid-column-start: 8;
-  grid-column-end: 10;
-  justify-self: end;
-  color: #111111;
+
+  @include mobile {
+    display: none;
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+
+@mixin button-rounded {
+  height: 43px;
+  width: 43px;
+  padding: 0;
 }
 
 .order {
-  grid-column-start: 10;
-  grid-column-end: -1;
-  justify-self: end;
+  order: 5;
   padding-right: 0;
+  @include mobile {
+    order: 3;
+    @include button-rounded;
+  }
+
+  @include tablet {
+    order: 2;
+    @include button-rounded;
+    @include flex-center;
+  }
+}
+
+.order svg {
+  width: 14px;
+  height: 14px;
+  color: $color-black;
 }

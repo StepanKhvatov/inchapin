@@ -1,5 +1,5 @@
-@use '../../../styles/mixins.scss' as *;
-@use '../../../styles/variables.module.scss' as *;
+@use '@/styles/mixins.scss' as *;
+@use '@/styles/variables.module.scss' as *;
 
 @mixin with-sizes {
   &.small {
