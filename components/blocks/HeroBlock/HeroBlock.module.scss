@@ -1,13 +1,26 @@
 @use '../../../styles/mixins.scss' as *;
 @use '../../../styles/variables.module.scss' as *;
 
+@mixin tablet-and-down {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
 .hero {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: auto 1fr;
+  // TO DO высчитать
   height: calc(100dvh - 100px);
   padding-bottom: 40px;
   @include container;
+
+  @include tablet-and-down() {
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+  }
 }
 
 .title {
@@ -19,11 +32,48 @@
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
-  max-width: 349px;
-  color: $color-primary;
+  max-width: 350px;
+
+  font-size: 26px;
+  line-height: 1.4;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+  display: block;
   align-self: end;
-  padding-bottom: 40px;
-  @include typography-h2;
+
+  @include mobile {
+    font-size: 13px;
+    line-height: 1.5;
+    align-self: start;
+    padding-bottom: 20px;
+  }
+
+  @include tablet {
+    font-size: 26px;
+    align-self: start;
+    padding-bottom: 43px;
+  }
+
+  @include small-desktop {
+    max-width: 255px;
+    font-size: 19px;
+    padding-bottom: 40px;
+  }
+
+  @include desktop {
+    max-width: 255px;
+    font-size: 19px;
+    padding-bottom: 40px;
+  }
+
+  @include large-desktop {
+    font-size: 31px;
+    max-width: 415px;
+    padding-bottom: 40px;
+  }
+
+  color: $color-primary;
 }
 
 .image {
@@ -31,7 +81,24 @@
   width: 100%;
   grid-column-start: 1;
   grid-column-end: 3;
-  height: 600px;
+  height: 505px;
+
+  @include mobile {
+    height: 315px;
+    margin-bottom: 20px;
+  }
+
+  @include tablet {
+    height: 490px;
+    margin-bottom: 40px;
+  }
+  @include small-desktop {
+    height: 410px;
+  }
+
+  @include large-desktop {
+    height: 600px;
+  }
 }
 
 .image img {
@@ -41,4 +108,8 @@
 .logo {
   align-self: end;
   padding-bottom: 40px;
+
+  @include tablet-and-down() {
+    align-self: start;
+  }
 }
