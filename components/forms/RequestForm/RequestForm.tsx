@@ -28,7 +28,6 @@ export const RequestForm = () => {
           autoComplete="name"
           minLength={2}
           maxLength={50}
-          pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
         />
         <PhoneInput
           id="phone"
