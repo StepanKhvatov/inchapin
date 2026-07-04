@@ -9,7 +9,7 @@ export type ButtonProps = Pick<
 > &
   PropsWithChildren<{
     variant: 'primary' | 'outline' | 'text' | 'unstyled';
-    size?: 'small' | 'large';
+    size?: 'small' | 'large' | 'none';
     className?: string;
     label?: string;
   }>;
