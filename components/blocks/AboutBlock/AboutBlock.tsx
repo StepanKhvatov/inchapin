@@ -15,7 +15,11 @@ export const AboutBlock = () => {
             src={aboutImage}
             fill
             alt={'Красивый дом'}
-            loading="eager"
+            sizes="(max-width: 767px) 300px,
+            (max-width: 1023px) 290px, 
+            (max-width: 1280px) 410px,
+            (min-width: 1770px) 675px,
+            570px"
             quality={90}
           />
           <div className={styles.logo}>

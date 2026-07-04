@@ -113,3 +113,22 @@
   height: 14px;
   color: $color-black;
 }
+
+.orderLoader {
+  width: 135px;
+  height: 13px;
+  order: 5;
+
+  @include mobile {
+    order: 3;
+  }
+
+  @include tablet {
+    order: 2;
+  }
+
+  @include tablet-and-down {
+    width: 43px;
+    height: 43px;
+  }
+}

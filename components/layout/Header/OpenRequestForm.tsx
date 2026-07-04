@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Modal } from '@/components/ui/Modal';
 import { RequestForm } from '@/components/forms/RequestForm';
 import modalStyles from '@/components/ui/Modal/Modal.module.scss';
-
+import headerStyles from './Header.module.scss';
 export type OpenRequestProps = {
   className?: string;
 };
@@ -13,7 +13,12 @@ import dynamic from 'next/dynamic';
 
 const OpenRequestButton = dynamic(
   () => import('./OpenRequestButton').then((mod) => mod.OpenRequestButton),
-  { ssr: false },
+  {
+    ssr: false,
+    loading: () => {
+      return <div className={headerStyles.orderLoader}></div>;
+    },
+  },
 );
 
 export const OpenRequest = ({ className }: OpenRequestProps) => {

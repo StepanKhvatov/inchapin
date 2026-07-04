@@ -54,7 +54,11 @@ export const Video = ({ previewImage, video }: VideoProps) => {
           src={previewImage.src}
           fill
           alt={previewImage.alt}
-          quality={75}
+          sizes="(max-width: 767px) 130px,
+          (max-width: 1023px) 135px, 
+          (max-width: 1280px) 135px,
+          (min-width: 1770px) 240px,
+          185px"
         />
         <div className={styles.mask}>
           <div className={styles.playCorner}>
