@@ -48,9 +48,7 @@ export const RequestForm = () => {
       </div>
       <p className={styles.disclaimer}>
         Нажимая на кнопку «Отправить», вы ознакомлены и подтверждаете согласие c{' '}
-        <Link href="/privacy-policy" target="_blank">
-          политикой обработки персональных данных
-        </Link>
+        <Link href="/">политикой обработки персональных данных</Link>
       </p>
       <Button
         type="submit"

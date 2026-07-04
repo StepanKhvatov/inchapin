@@ -4,9 +4,10 @@
 .overlay {
   position: fixed;
   inset: 0;
-  padding: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background: #fff;
-  z-index: 9999;
+  z-index: 1000;
   @include flex-center;
 
   &.enter {
@@ -31,15 +32,30 @@
 .panel {
   position: relative;
   width: 100%;
-
   flex-direction: column;
-  max-width: 520px;
   margin: auto;
+  max-width: 455px;
+
+  @include mobile {
+    max-width: 320px;
+  }
+
+  @include tablet {
+    max-width: 440px;
+  }
+
+  @include small-desktop {
+    max-width: 370px;
+  }
+
+  @include large-desktop {
+    max-width: 590px;
+  }
 }
 
 .container {
   position: relative;
-  width: 90vw;
+
   height: 90vh;
   @include flex-center;
   @include container;
@@ -48,7 +64,12 @@
 .close {
   position: absolute;
   top: 0px;
-  right: 0px;
+  right: 20px;
+  padding: 0;
+  transition: $transition-base;
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .close svg {
@@ -66,6 +87,7 @@
   text-transform: uppercase;
 
   @include mobile {
+    margin-bottom: 30px;
     font-size: 20px;
     text-align: left;
   }
@@ -80,5 +102,6 @@
 
   @include large-desktop {
     font-size: 52px;
+    margin-bottom: 80px;
   }
 }

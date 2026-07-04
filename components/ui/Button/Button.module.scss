@@ -7,17 +7,18 @@
   }
 
   &.large {
-    padding: 24px 69px;
+    padding: 25px 70px;
     font-size: 14px;
+    @include small-desktop-and-down {
+      padding: 20px 40px;
+    }
   }
 }
 
 .button {
   cursor: pointer;
-
   overflow: hidden;
   white-space: nowrap;
-
   @include focus-ring;
   @include typography-button;
 
@@ -59,11 +60,8 @@
 
 .inner {
   display: grid;
-
   place-items: center;
-
   overflow: hidden;
-  grid-template-areas: 'stack';
 }
 
 .innerText {

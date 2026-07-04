@@ -1,6 +1,4 @@
-export type IconProps = {
-  className?: string;
-};
+import type { IconProps } from './types';
 
 export const PlayIcon = ({ className }: IconProps) => {
   return (

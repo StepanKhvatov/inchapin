@@ -1,23 +1,55 @@
+@use '@/styles/mixins.scss' as *;
 @use '../../../styles/variables.module.scss' as *;
 
 .form {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
+
+  // @include mobile {
+  // }
+
+  // @include tablet {
+  // }
+
+  // @include small-desktop {
+  // }
+
+  // @include desktop {
+  // }
+
+  @include large-desktop {
+    max-width: 590px;
+  }
 }
 
 .disclaimer {
   margin-bottom: 30px;
   font-size: 12px;
-  line-height: 140%;
-  max-width: 454px;
+  line-height: 1.4;
   text-align: center;
   color: $color-secondary;
-  & a {
-    color: inherit;
-    text-decoration: underline;
+  width: 90%;
+  @include tablet {
+    font-size: 11px;
   }
+
+  @include small-desktop-and-down {
+    line-height: 1.6;
+    width: 100%;
+  }
+
+  @include small-desktop {
+    font-size: 11px;
+  }
+
+  @include large-desktop {
+    font-size: 14px;
+  }
+}
+
+.disclaimer a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 .inputsContainer {
@@ -25,7 +57,23 @@
   margin-bottom: 50px;
   display: flex;
   flex-direction: column;
-  gap: 41px;
+  gap: 40px;
+
+  @include mobile {
+    margin-bottom: 40px;
+  }
+
+  @include tablet {
+    gap: 45px;
+  }
+
+  @include small-desktop {
+    gap: 45px;
+  }
+
+  @include large-desktop {
+    gap: 50px;
+  }
 }
 
 .button {

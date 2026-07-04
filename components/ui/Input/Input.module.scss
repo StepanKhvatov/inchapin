@@ -1,10 +1,35 @@
 @use '../../../styles/mixins.scss' as *;
 @use '../../../styles/variables.module.scss' as *;
 
+@mixin label-transform {
+  transform: translateY(-32px) scale(0.65);
+
+  @include mobile {
+    transform: translateY(-22px) scale(0.65);
+  }
+}
+
 @mixin typography-input {
   font-size: 16px;
   text-transform: uppercase;
   font-weight: 400;
+  line-height: 1.6;
+
+  @include mobile {
+    font-size: 11px;
+  }
+
+  @include tablet {
+    font-size: 14px;
+  }
+
+  @include small-desktop {
+    font-size: 14px;
+  }
+
+  @include large-desktop {
+    font-size: 17px;
+  }
 }
 
 .field {
@@ -14,7 +39,7 @@
   padding: 4px 0px;
 
   &:focus-within .label {
-    transform: translateY(-26px) scale(0.65);
+    @include label-transform;
   }
 }
 
@@ -38,6 +63,6 @@
   @include typography-input;
 
   &.filled {
-    transform: translateY(-25px) scale(0.65);
+    @include label-transform;
   }
 }

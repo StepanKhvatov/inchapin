@@ -36,7 +36,7 @@ export const AboutBlock = () => {
         <div className={styles.videoSide}>
           <div className={styles.captionContainer}>
             <p className={styles.caption}>Видео о проекте</p>
-            <p className={styles.duration}>1:25 минут</p>
+            <p className={styles.duration}>0:17 минут</p>
           </div>
           <div className={styles.divider}></div>
           <Video
